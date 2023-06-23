@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Pedido</title>
+</head>
+<body>
+  <h1>Registrar Pedido</h1>
+  
+  <h2>Produtos:</h2>
+  <ul>
+    <li><button onclick="addToCart('Produto 1')">Produto 1</button></li>
+    <li><button onclick="addToCart('Produto 2')">Produto 2</button></li>
+    <li><button onclick="addToCart('Produto 3')">Produto 3</button></li>
+    <!-- Add more buttons for other products -->
+  </ul>
+
+  <h3>Carrinho:</h3>
+  <ul id="carrinho">
+    <!-- Selected products will be added dynamically here -->
+  </ul>
+
+  <p>Total: R$ <span id="total">0.00</span></p>
+
+  <p>Dinheiro Recebido: R$ <input type="number" id="dinheiro" step="0.01"></p>
+  <button onclick="finalizarPedido()">Finalizar Pedido</button>
+
+  <script>
+    let cart = [];
+    let totalAmount = 0;
+
+    function addToCart(product) {
+      cart.push(product);
+      totalAmount += getProductPrice(product);
+      document.getElementById('carrinho').innerHTML += '<li>' + product + '</li>';
+      document.getElementById('total').textContent = totalAmount.toFixed(2);
+    }
+
+    function getProductPrice(product) {
+      // Implement your logic to retrieve the product price from the stock
+      // Return the price as a number
+    }
+
+    function finalizarPedido() {
+      const dinheiroRecebido = parseFloat(document.getElementById('dinheiro').value);
+      const troco = dinheiroRecebido - totalAmount;
+      // Implement your logic to save the order and update the stock quantities
+      // Display the total amount, troco, and any other relevant information
+    }
+  </script>
+</body>
+</html>

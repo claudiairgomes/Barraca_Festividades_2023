@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Consultar Estoque</title>
+</head>
+<body>
+  <h1>Consultar Estoque</h1>
+
+  <ul id="estoque">
+    <!-- Display the stock information dynamically here -->
+  </ul>
+
+  <script>
+    // Assume you have an array or database containing the stock information
+    const stock = [
+      { produto: 'Produto 1', quantidade: 10 },
+      { produto: 'Produto 2', quantidade: 5 },
+      // Add more stock items here
+    ];
+
+    const estoqueList = document.getElementById('estoque');
+    stock.forEach(item => {
+      const listItem = document.createElement('li');
+      listItem.textContent = item.produto + ' - Quantidade: ' + item.quantidade;
+      estoqueList.appendChild(listItem);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Estoque</title>
+</head>
+<body>
+  <h1>Registrar Estoque</h1>
+  
+  <form>
+    <label for="produto">Produto:</label>
+    <input type="text" id="produto">
+
+    <label for="preco">Preço:</label>
+    <input type="number" id="preco" step="0.01">
+
+    <label for="quantidade">Quantidade:</label>
+    <input type="number" id="quantidade">
+
+    <button type="button" onclick="registrarEstoque()">Registrar</button>
+  </form>
+
+  <script>
+    function registrarEstoque() {
+      const produto = document.getElementById('produto').value;
+      const preco = parseFloat(document.getElementById('preco').value);
+      const quantidade = parseInt(document.getElementById('quantidade').value);
+      // Implement your logic to register the product in the stock
+      // You can use an array, object, or database to store the stock information
+    }
+  </script>
+</body>
+</html>
